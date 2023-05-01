@@ -1,4 +1,4 @@
-
+package main.spiel;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,6 +21,7 @@ public class Spiel {
 		System.setProperty("log4j.configurationFile","./configuration.xml");
 		Logger logger = LogManager.getRootLogger();
     	logger.trace("Configuration File Defined To Be :: "+System.getProperty("log4j.properties"));
+    	Einstellungen einstellungen = Einstellungen.getInstance();
 		Spiel spiel = new Spiel();
 		//Schiffseigenschaften intitialisiertsen
 		//@TODO: Partameter haben z.Zt. keine Auswirkungen.

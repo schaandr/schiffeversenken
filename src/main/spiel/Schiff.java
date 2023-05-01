@@ -1,7 +1,4 @@
-
-
-import java.io.Reader;
-
+package main.spiel;
 public class Schiff{
 	private String name;
 	private int xstart, ystart;
