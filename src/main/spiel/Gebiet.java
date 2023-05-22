@@ -39,4 +39,15 @@ public class Gebiet
    public boolean isSchiff(){
         return schiffIstAufFeld;
    }   
+   
+   public String toString() {
+       if (this.isFeldWurdeBeschossen()) {
+    	   return "*";
+       } else {
+    	   if (this.isSchiff()) return "X";
+	          else {
+	        	  return "-";
+	          }
+	       }
+   }
 } // Ende der Klasse

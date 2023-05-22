@@ -2,8 +2,10 @@ package main.gui;
 
 import javax.swing.table.AbstractTableModel;
 
+import main.spiel.Gebiet;
+
 public class SpielfeldTableModel extends AbstractTableModel {
-		private String[] columnNames;
+		private String[] columnNames = {"A","B","C","D","E","F","G","H","I","J"};
 		private Object[][] data;	
 	
 		private static final long serialVersionUID = 1L;
@@ -24,8 +26,8 @@ public class SpielfeldTableModel extends AbstractTableModel {
 	        return data[row][col];
 	    }
 	    
-	    public Class getColumnClass(int c) {
-	        return getValueAt(0, c).getClass();
+	    public Class getColumnClass(int row, int col) {
+	    	return getValueAt(row, col).getClass();
 	    }
 
 	    /*
@@ -46,7 +48,7 @@ public class SpielfeldTableModel extends AbstractTableModel {
 	     * Don't need to implement this method unless your table's
 	     * data can change.
 	     */
-	    public void setValueAt(Object value, int row, int col) {
+	    public void setValueAt(Gebiet value, int row, int col) {
 	        data[row][col] = value;
 	        fireTableCellUpdated(row, col);
 	    }

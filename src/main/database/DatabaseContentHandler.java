@@ -9,15 +9,15 @@ public class DatabaseContentHandler extends DefaultHandler{
 
 	// Wird aufgerufen, wenn ein Startelement gefunden wird
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        System.out.println("Start-Element: " + qName);
+        System.out.println(repeatString("\t", indent)+ "Start-Element: " + qName);
         
         // Verarbeiten Sie hier die Attribute des Elements, falls erforderlich
         if (attributes.getLength() > 0) {
-            System.out.println(String.  "Attribute:");
+            System.out.println(repeatString("\t", indent)+  "Attribute:");
             for (int i = 0; i < attributes.getLength(); i++) {
                 String attributeName = attributes.getQName(i);
                 String attributeValue = attributes.getValue(i);
-                System.out.println(attributeName + " = " + attributeValue);
+                System.out.println(repeatString("\t", indent)+ attributeName + " = " + attributeValue);
             }
         }
         indent++;
@@ -25,7 +25,7 @@ public class DatabaseContentHandler extends DefaultHandler{
 
     // Wird aufgerufen, wenn ein Endelement gefunden wird
     public void endElement(String uri, String localName, String qName) throws SAXException {
-        System.out.println("End-Element: " + qName);
+        System.out.println(repeatString("\t", indent)+ "End-Element: " + qName);
         indent--;
     }
 
@@ -38,7 +38,11 @@ public class DatabaseContentHandler extends DefaultHandler{
     }
     
     private String repeatString(String str, int times) {
-    	for(int)
+    	StringBuilder sb = new StringBuilder();
+    	for(int i=0;i<times;i++) {
+    		sb.append(str);
+    	}
+    	return sb.toString();
     };
 }
 
